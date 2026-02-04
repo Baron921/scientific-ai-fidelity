@@ -24,7 +24,7 @@ def generer_json(fichier_excel, fichier_sortie, mode="imbrique"):
             df = df.replace(["-", ""], "Non renseigné")
 
             if mode == "simple":
-                df['domaine'] = nom_onglet.upper()
+                df['Domaine'] = nom_onglet.upper()
 
             records = df.to_dict(orient='records')
 
