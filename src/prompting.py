@@ -69,7 +69,7 @@ def generate_improved_text(data, instructions, model):
 data = [
     {
         "Doi": "https://doi.org/10.57896/2024-tal-65_3_3",
-        "Paragraphes": "For training, we use state-of-the-art encoder and decoder models developed for German...",
+        "Paragraphes": "A Hidden Markov Model (HMM) is a classical statistical model [32] that embodies a set of statistical assumptions concerning the generation of sample data (and similar data from a larger population). It is often used in NLP for tagging [33, 34]. It can be applied to speech recognition, part-of-speech tagging and various bioinformatics applications inter alia. Given an input sequence of n signs X = (x1, …, xn) and a possible output transliteration Y = (y1, …, yn), an HMM provides the probability p(X, Y). Thus, given a sequence of signs X = (x1, …, xn), we can choose the transliteration  that maximizes .",
         "Auteur": "Delphine Battistelli, Farah Benamara, Viviana Patti",
         "Date de publication": "2025",
         "URL": "https://aclanthology.org/2024.tal-3.4/",

@@ -9,6 +9,24 @@
         "Domaine": "TALN",
         "Rew1": "A Hidden Markov Model (HMM) is a classical statistical model that embodies a set of statistical assumptions concerning the generation of sample data and similar data from a larger population. It is often used in NLP for tagging and can be applied to speech recognition, part-of-speech tagging, and various bioinformatics applications. Given an input sequence of n signs X = (x1, …, xn) and a possible output transliteration Y = (y1, …, yn), an HMM provides the probability p(X, Y). Thus, given a sequence of signs X = (x1, …, xn), we can choose the transliteration that maximizes the probability .",
         "Rew2": "A Hidden Markov Model (HMM) is a classical statistical model [32] that embodies a set of statistical assumptions concerning the generation of sample data (and similar data from a larger population). It is often used in NLP for tagging [33, 34]. It can be applied to speech recognition, part-of-speech tagging and various bioinformatics applications inter alia. Given an input sequence of n signs X = (x1, …, xn) and a possible output transliteration Y = (y1, …, yn), an HMM provides the probability p(X, Y). Thus, given a sequence of signs X = (x1, …, xn), we can choose the transliteration that maximizes .",
-        "Rew3": "A Hidden Markov Model (HMM) is a classical statistical model [32] that embodies a set of statistical assumptions concerning the generation of sample data (and similar data from a larger population). It is often used in NLP for tagging [33, 34]. It can be applied to speech recognition, part-of-speech tagging and various bioinformatics applications inter alia. Given an input sequence of n signs X = (x1, …, xn) and a possible output transliteration Y = (y1, …, yn), an HMM provides the probability p(X, Y). Thus, given a sequence of signs X = (x1, …, xn), we can choose the transliteration that maximizes ."
+        "Rew3": "A Hidden Markov Model (HMM) is a classical statistical model [32] that embodies a set of statistical assumptions concerning the generation of sample data (and similar data from a larger population). It is often used in NLP for tagging [33, 34]. It can be applied to speech recognition, part-of-speech tagging and various bioinformatics applications inter alia. Given an input sequence of n signs X = (x1, …, xn) and a possible output transliteration Y = (y1, …, yn), an HMM provides the probability p(X, Y). Thus, given a sequence of signs X = (x1, …, xn), we can choose the transliteration that maximizes .",
+        "BertScore1": 0.9347683787345886,
+        "BartScore1": -0.64208984375,
+        "Cos_Sim1": 0.9943225383758545,
+        "FactCC1": 1,
+        "FactAcc1": 1.0,
+        "DAE1": 0.0,
+        "BertScore2": 1.0,
+        "BartScore2": -0.141845703125,
+        "Cos_Sim2": 1.0,
+        "FactCC2": 0,
+        "FactAcc2": 1.0,
+        "DAE2": 0.0,
+        "BertScore3": 1.0,
+        "BartScore3": -0.141845703125,
+        "Cos_Sim3": 1.0,
+        "FactCC3": 0,
+        "FactAcc3": 1.0,
+        "DAE3": 0.0
     }
 ]

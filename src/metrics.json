@@ -1,0 +1,15 @@
+[
+    {
+        "Doi": "https://doi.org/10.57896/2024-tal-65_3_3",
+        "Paragraphes": "For training, we use state-of-the-art encoder and decoder models developed for German...",
+        "Auteur": "Delphine Battistelli, Farah Benamara, Viviana Patti",
+        "Date de publication": "2025",
+        "URL": "https://aclanthology.org/2024.tal-3.4/",
+        "Licence": "CC BY 4.0",
+        "Domaine": "TALN",
+        "Rew1": "For training, we utilize state-of-the-art encoder and decoder models specifically designed for German language tasks.",
+        "Rew2": "For training, we use state-of-the-art encoder and decoder models developed for German machine translation tasks.",
+        "Rew3": "For training, we use state-of-the-art encoder and decoder models developed for German machine translation tasks.",
+        "BertScore1": 0.8736903071403503,
+        "BartScore1": -2.849609375,
+        "Cos_Sim1": 
