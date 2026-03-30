@@ -15,18 +15,21 @@
         "Cos_Sim1": 0.9943225383758545,
         "FactCC1": 1,
         "FactAcc1": 1.0,
-        "DAE1": 0.0,
+        "DAE1": 0.25,
+        "FActScore1": 0.25,
         "BertScore2": 1.0,
         "BartScore2": -0.141845703125,
         "Cos_Sim2": 1.0,
         "FactCC2": 0,
         "FactAcc2": 1.0,
-        "DAE2": 0.0,
+        "DAE2": 0.5,
+        "FActScore2": 0.5,
         "BertScore3": 1.0,
         "BartScore3": -0.141845703125,
         "Cos_Sim3": 1.0,
         "FactCC3": 0,
         "FactAcc3": 1.0,
-        "DAE3": 0.0
+        "DAE3": 0.41666666666666663,
+        "FActScore3": 0.41666666666666663
     }
 ]
