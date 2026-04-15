@@ -2,7 +2,7 @@ import streamlit as st
 import time
 
 # ==========================================
-# 1. CONFIGURATION DE LA PAGE
+# CONFIGURATION DE LA PAGE
 # ==========================================
 st.set_page_config(
     page_title="TER ATAL - Évaluation Factuelle",
@@ -10,13 +10,13 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🔬 Évaluation de la Fidélité Factuelle des Réécritures")
+st.title("Évaluation de la fidélité factuelle des réécritures scientiﬁques générées par IA")
 st.markdown("**Projet TER - Master 1 ATAL** | *Détection d'hallucinations dans les textes scientifiques*")
 
 # ==========================================
-# 2. BARRE LATÉRALE (PARAMÈTRES)
+# BARRE LATÉRALE
 # ==========================================
-st.sidebar.header("⚙️ Configuration du Pipeline")
+st.sidebar.header("Configuration du Pipeline")
 
 st.sidebar.subheader("1. Baselines (Surface & Sémantique)")
 use_rouge = st.sidebar.checkbox("ROUGE-1 & ROUGE-L", value=True)
@@ -31,28 +31,28 @@ use_factcc = st.sidebar.checkbox("FactCC (NLI)", value=True)
 use_llm = st.sidebar.checkbox("LLM-as-a-Judge (Analyse fine)", value=True)
 
 # ==========================================
-# 3. INTERFACE UTILISATEUR (INPUTS)
+# INTERFACE UTILISATEUR (INPUTS)
 # ==========================================
 st.write("### Textes à analyser")
 
 col1, col2 = st.columns(2)
 with col1:
     source_text = st.text_area(
-        "📄 Paragraphe Source (Vérité Terrain)",
+        "Paragraphe Source (Vérité Terrain)",
         value="Le patient a reçu une dose de 10 mg d'aspirine par jour pendant 4 semaines, ce qui a réduit la pression artérielle de 15%.",
         height=120
     )
 
 with col2:
     generated_text = st.text_area(
-        "🤖 Réécriture générée par IA",
+        "Réécriture générée par IA",
         value="Une dose quotidienne de 100 mg d'aspirine a été administrée au patient sur une période de 4 semaines, entraînant une baisse de 15% de la pression artérielle.",
         height=120
     )
 
 
 # ==========================================
-# 4. DONNÉES STATIQUES (MOCKS POUR TESTER L'UI)
+# DONNÉES STATIQUES (MOCKS POUR TESTER L'UI)
 # ==========================================
 def get_static_baselines():
     # Des scores très hauts pour prouver que les baselines se font "piéger" par la syntaxe
@@ -65,7 +65,7 @@ def get_static_ner_visualisation():
     <div style="line-height: 1.6; font-size: 16px;">
         Une dose quotidienne de 
         <span style='background-color: #ffcccc; padding: 2px 4px; border-radius: 4px; color: #cc0000; border: 1px solid #cc0000;'>
-            <b>100 mg ⚠️ (Source: 10 mg)</b>
+            <b>100 mg️ (Source: 10 mg)</b>
         </span> 
         d'<span style='background-color: #e6f3ff; padding: 2px 4px; border-radius: 4px; color: #0066cc;'>aspirine</span> 
         a été administrée au patient sur une période de 
@@ -84,12 +84,12 @@ def get_static_fact_acc():
 
 
 # ==========================================
-# 5. EXÉCUTION DU PIPELINE ET AFFICHAGE
+# EXÉCUTION DU PIPELINE ET AFFICHAGE
 # ==========================================
-if st.button("🚀 Lancer l'Évaluation Factuelle", type="primary"):
+if st.button("Lancer l'Évaluation Factuelle", type="primary"):
 
     st.divider()
-    st.write("### 📊 Résultats de l'analyse")
+    st.write("### Résultats de l'analyse")
 
     # Barre de progression simulée pour l'effet UX
     progress_text = "Analyse en cours..."
@@ -104,7 +104,7 @@ if st.button("🚀 Lancer l'Évaluation Factuelle", type="primary"):
     if use_rouge or use_scibert:
         st.markdown("#### 1. Métriques Classiques (Le Faux Positif)")
         st.info(
-            "💡 *Note : Ces métriques donnent un score très élevé car la similarité des mots est forte, masquant l'erreur médicale grave (100mg au lieu de 10mg).*")
+            " *Note : Ces métriques donnent un score très élevé car la similarité des mots est forte, masquant l'erreur médicale grave (100mg au lieu de 10mg).*")
 
         res_baselines = get_static_baselines()
         b_col1, b_col2, b_col3 = st.columns(3)
@@ -140,7 +140,7 @@ if st.button("🚀 Lancer l'Évaluation Factuelle", type="primary"):
 
         if use_factcc:
             st.error(
-                "❌ **FactCC (NLI) : INCOHÉRENCE DÉTECTÉE** \n\nLe modèle identifie une contradiction factuelle formelle entre la source et la génération.")
+                " **FactCC (NLI) : INCOHÉRENCE DÉTECTÉE** \n\nLe modèle identifie une contradiction factuelle formelle entre la source et la génération.")
         if use_llm:
             st.warning(
-                "🤖 **LLM-as-a-Judge (Analyse Oracle) :** \n\nLe texte est grammaticalement parfait et respecte le ton scientifique. Cependant, il présente une **hallucination intrinsèque sévère** : la valeur numérique de la dose d'aspirine a été multipliée par 10 (100 mg au lieu de 10 mg), ce qui altère totalement la validité du résultat clinique.")
+                "**LLM-as-a-Judge (Analyse Oracle) :** \n\nLe texte est grammaticalement parfait et respecte le ton scientifique. Cependant, il présente une **hallucination intrinsèque sévère** : la valeur numérique de la dose d'aspirine a été multipliée par 10 (100 mg au lieu de 10 mg), ce qui altère totalement la validité du résultat clinique.")
