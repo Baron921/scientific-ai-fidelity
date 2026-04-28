@@ -9,7 +9,7 @@ from views import home, data_view, eval_view, config_view, about_view
 # ==========================================
 st.set_page_config(
     page_title="TER ATAL - Évaluation Factuelle",
-    page_icon="🔬",
+    page_icon="",
     layout="wide"
 )
 

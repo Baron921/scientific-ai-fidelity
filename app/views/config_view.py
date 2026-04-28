@@ -1,7 +1,7 @@
 import streamlit as st
 
 def afficher():
-    st.header("⚙️ Configuration du Pipeline")
+    st.header("Configuration du Pipeline")
     st.write("Personnalisez les méthodes d'évaluation utilisées lors de l'analyse des textes.")
 
     # Initialisation des variables de configuration dans le session_state
@@ -31,7 +31,7 @@ def afficher():
         )
 
     with col2:
-        st.subheader("🛠️ Extraction Structurée")
+        st.subheader("Extraction Structurée")
         st.session_state.config["use_ner"] = st.toggle(
             "Vérification NER (Chiffres & Unités)",
             value=st.session_state.config["use_ner"]
@@ -43,7 +43,7 @@ def afficher():
 
     st.divider()
 
-    st.subheader("⚖️ Paramètres Avancés")
+    st.subheader("Paramètres Avancés")
     st.session_state.config["threshold"] = st.slider(
         "Seuil de tolérance factuelle",
         0.0, 1.0,

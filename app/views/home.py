@@ -5,7 +5,7 @@ from components.footer import afficher_footer
 
 def afficher():
     # En-tête principal
-    st.title("🔬 Évaluer la ﬁdélité factuelle des réécritures scientiﬁques générées par IA")
+    st.title("Évaluer la ﬁdélité factuelle des réécritures scientiﬁques générées par IA")
     st.markdown("### Détection d'hallucinations dans les réécritures scientifiques")
 
     st.divider()
@@ -54,31 +54,28 @@ def afficher():
     st.markdown("---")
 
     # Guide d'utilisation en 3 étapes
-    st.header("🚀 Comment utiliser cette plateforme ?")
+    st.header("Comment utiliser cette plateforme ?")
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.markdown("### 1. 📂 Données")
+        st.markdown("### 1.Données")
         st.write(
             "Commencez par importer votre jeu de données (fichier CSV) contenant les textes sources et les textes générés par l'IA.")
         st.caption("Allez dans l'onglet *Données*")
 
     with col2:
-        st.markdown("### 2. ⚙️ Configuration")
+        st.markdown("### 2.Configuration")
         st.write(
             "Sélectionnez les algorithmes d'évaluation à activer (Baselines classiques vs Notre approche par extraction).")
         st.caption("Allez dans l'onglet *Configuration*")
 
     with col3:
-        st.markdown("### 3. 🧪 Évaluation")
+        st.markdown("### 3.Évaluation")
         st.write(
             "Lancez l'analyse sur une paire de textes spécifique pour visualiser la détection des erreurs en temps réel.")
         st.caption("Allez dans l'onglet *Évaluation*")
 
     st.markdown("---")
-
-    # Pied de page
-    # st.caption("👨‍💻 Projet réalisé sous la supervision de Pascal Molli | Équipe de recherche TER")
 
     afficher_footer()

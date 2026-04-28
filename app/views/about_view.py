@@ -25,14 +25,14 @@ def afficher():
     col_etudiants, col_encadrants = st.columns(2)
 
     with col_etudiants:
-        st.subheader("👨‍🎓 Étudiants")
+        st.subheader("Étudiants")
         st.markdown("""
         * **Florias Tokotchi** *florias.tokotchi@etu.univ-nantes.fr* *(à remplacer par ton vrai mail si besoin)*
         * **Amos** *amos.[nom]@etu.univ-nantes.fr* *(à compléter)*
         """)
 
     with col_encadrants:
-        st.subheader("👨‍🏫 Encadrants")
+        st.subheader("Encadrants")
         st.markdown("""
         * **Richard Dufour** *richard.dufour@univ-nantes.fr*
         * **Florian Boudin** *florian.boudin@inria.fr*

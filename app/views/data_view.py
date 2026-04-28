@@ -48,7 +48,7 @@ def load_data():
 def afficher():
     from components.footer import afficher_footer
 
-    st.header("📂 Exploration du Dataset")
+    st.header("Exploration du Dataset")
     st.write(
         "Ce jeu de données a été constitué pour évaluer la fidélité factuelle des réécritures. Il contient 100 passages scientifiques issus de la littérature académique, riches en entités numériques et nommées.")
 
@@ -58,7 +58,7 @@ def afficher():
     df = load_data()
 
     if df is None:
-        st.error("⚠️ Impossible de trouver le fichier `dataset_imbrique.json` dans le dossier `assets/`.")
+        st.error("Impossible de trouver le fichier `dataset_imbrique.json` dans le dossier `assets/`.")
         afficher_footer()
         return
 
@@ -68,7 +68,7 @@ def afficher():
     # ==========================================
     # 1. MÉTRIQUES GLOBALES (KPIs)
     # ==========================================
-    st.subheader("📊 Vue d'ensemble")
+    st.subheader("Vue d'ensemble")
     col1, col2, col3 = st.columns(3)
 
     with col1:
@@ -107,7 +107,7 @@ def afficher():
     # ==========================================
     # 2. RÉPARTITION VISUELLE (Donut Chart)
     # ==========================================
-    st.subheader("📊 Répartition du corpus")
+    st.subheader("Répartition du corpus")
 
     # On transforme les données pour Plotly
     repartition = df["Domaine"].value_counts().reset_index()
@@ -146,7 +146,7 @@ def afficher():
     # ==========================================
     # 3. EXPLORATEUR INTERACTIF
     # ==========================================
-    st.subheader("🔍 Explorer les textes")
+    st.subheader("Explorer les textes")
 
     # Filtre par domaine
     domaines_disponibles = ["Tous les domaines"] + list(df["Domaine"].unique())
@@ -170,6 +170,6 @@ def afficher():
     )
 
     st.info(
-        "💡 **Note pour l'évaluation :** Les textes sources de ce tableau seront utilisés comme vérité terrain dans notre pipeline NLP situé dans l'onglet **Évaluation**.")
+        "**Note pour l'évaluation :** Les textes sources de ce tableau seront utilisés comme vérité terrain dans notre pipeline NLP situé dans l'onglet **Évaluation**.")
 
     afficher_footer()

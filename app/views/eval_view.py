@@ -36,13 +36,13 @@ def calculer_score(source_entites, target_entites):
 def afficher():
     from components.footer import afficher_footer
 
-    st.header("🧪 Pipeline d'Évaluation Factuelle")
+    st.header("Pipeline d'Évaluation Factuelle")
     st.write("Analysez les paires de textes pour détecter les altérations factuelles (chiffres, unités, entités).")
     st.divider()
 
     # 1. VÉRIFICATION DES PRÉREQUIS
     if 'dataset' not in st.session_state or st.session_state.dataset is None:
-        st.warning("⚠️ Aucun jeu de données chargé. Veuillez d'abord vous rendre dans l'onglet **Données**.")
+        st.warning("Aucun jeu de données chargé. Veuillez d'abord vous rendre dans l'onglet **Données**.")
         afficher_footer()
         return
 
@@ -72,11 +72,11 @@ def afficher():
     # Affichage côte à côte
     col_source, col_target = st.columns(2)
     with col_source:
-        st.markdown("**📄 Texte Source Original**")
+        st.markdown("**Texte Source Original**")
         st.info(ligne['Texte Source'])
 
     with col_target:
-        st.markdown("**🤖 Texte Généré (LLM)**")
+        st.markdown("**Texte Généré (LLM)**")
         # On simule la sélection du texte généré en fonction du radio button
         # (Dans la réalité, assure-toi d'avoir ces colonnes dans ton CSV)
         texte_genere = ligne['Texte Source'].replace("20", "40")  # Simulation d'une hallucination
@@ -90,7 +90,7 @@ def afficher():
     # On récupère la configuration (ou on met des valeurs par défaut si on n'a pas visité l'onglet Config)
     config = st.session_state.get('config', {"use_ner": True, "threshold": 0.85})
 
-    if st.button("🚀 Lancer l'Évaluation Factuelle", type="primary", use_container_width=True):
+    if st.button("Lancer l'Évaluation Factuelle", type="primary", use_container_width=True):
 
         # Animation d'attente pour faire "pro"
         with st.spinner('Analyse NLP en cours (spaCy NER & Expressions régulières)...'):
@@ -125,9 +125,9 @@ def afficher():
         # Conclusion textuelle
         if score < 100.0:
             st.error(
-                "🚨 **Alerte d'altération :** Le modèle a modifié ou supprimé des valeurs numériques importantes lors de la réécriture.")
+                "**Alerte d'altération :** Le modèle a modifié ou supprimé des valeurs numériques importantes lors de la réécriture.")
         else:
             st.success(
-                "✅ **Intégrité préservée :** Les chiffres et unités clés ont été conservés par le modèle de langage.")
+                "**Intégrité préservée :** Les chiffres et unités clés ont été conservés par le modèle de langage.")
 
     afficher_footer()
