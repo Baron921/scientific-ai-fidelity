@@ -1,2 +1,6 @@
 .venv/
 .idea/workspace.xml
+*env/*
+.env
+.env*/*
+.env*
