@@ -3,7 +3,7 @@ from openai import OpenAI
 import json
 import nltk
 
-# Configuration
+# configuration
 client_openai = OpenAI(api_key="VOTRE_CLE_API_OPENAI")
 MODEL_OLLAMA = "llama3"
 MODEL_JUDGE = "gpt-4o"
