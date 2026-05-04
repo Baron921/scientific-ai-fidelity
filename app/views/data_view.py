@@ -1,73 +1,60 @@
-import streamlit as st
 import pandas as pd
-import json
-import os
+import streamlit as st
 import plotly.express as px
-
+from utils.data_loader import load_data
+from components.header import afficher_header
+from components.footer import afficher_footer
 
 # ==========================================
 # FONCTION DE CHARGEMENT DES DONNÉES
 # ==========================================
 @st.cache_data
-def load_data():
-    """Charge et nettoie le fichier JSON en gérant les chemins de manière robuste."""
-    # Calcul du chemin absolu vers le fichier JSON
-    dossier_actuel = os.path.dirname(os.path.abspath(__file__))
-    racine_projet = os.path.dirname(dossier_actuel)
-    chemin_json = os.path.join(racine_projet, "../json", "dataset_imbrique.json")
+def format_data():
+    """Charge via le module global et formate le JSON en DataFrame Pandas."""
 
-    try:
-        with open(chemin_json, 'r', encoding='utf-8') as f:
-            raw_data = json.load(f)
+    raw_data = load_data("dataset_imbrique.json")
 
-        flat_list = []
-        # On parcourt chaque domaine et ses éléments
-        for domain, items in raw_data.items():
-            for item in items:
-                # Gestion des petites incohérences de nommage dans le JSON
-                texte = item.get("Paragraphes", item.get("Paragraphe", "Non renseigné"))
-                url = item.get("URL", item.get("URL / PDF", "Non renseigné"))
-
-                flat_list.append({
-                    "Domaine": domain,
-                    "Date": item.get("Date de publication", "Non renseigné"),
-                    "Auteur": item.get("Auteur", "Non renseigné"),
-                    "DOI": item.get("Doi", "Non renseigné"),
-                    "Texte Source": texte,
-                    "URL": url,
-                    "Licence": item.get("Licence", "Non renseigné")
-                })
-        return pd.DataFrame(flat_list)
-    except FileNotFoundError:
+    if raw_data is None:
         return None
 
+    flat_list = []
 
-# ==========================================
-# AFFICHAGE DE LA PAGE
-# ==========================================
+    for domain, items in raw_data.items():
+        for item in items:
+            texte = item.get("Paragraphes", item.get("Paragraphe", "Non renseigné"))
+            url = item.get("URL", item.get("URL / PDF", "Non renseigné"))
+
+            flat_list.append({
+                "Domaine": domain,
+                "Date": item.get("Date de publication", "Non renseigné"),
+                "Auteur": item.get("Auteur", "Non renseigné"),
+                "DOI": item.get("Doi", "Non renseigné"),
+                "Texte Source": texte,
+                "URL": url,
+                "Licence": item.get("Licence", "Non renseigné")
+            })
+
+    return pd.DataFrame(flat_list)
+
 def afficher():
-    from components.footer import afficher_footer
+    afficher_header(
+        titre="Exploration du jeu de données",
+        icone="",
+        description="Ce jeu de données a été constitué pour évaluer la fidélité factuelle des réécritures. Il contient 121 passages scientifiques issus de la littérature académique, riches en entités numériques et nommées"
+    )
 
-    st.header("Exploration du Dataset")
-    st.write(
-        "Ce jeu de données a été constitué pour évaluer la fidélité factuelle des réécritures. Il contient 100 passages scientifiques issus de la littérature académique, riches en entités numériques et nommées.")
+    # st.divider()
 
-    st.divider()
-
-    # Chargement des données
-    df = load_data()
+    # chargement des données
+    df = format_data()
 
     if df is None:
         st.error("Impossible de trouver le fichier `dataset_imbrique.json` dans le dossier `assets/`.")
         afficher_footer()
         return
 
-    # On sauvegarde le dataset dans la mémoire globale pour l'utiliser dans l'onglet Évaluation
     st.session_state.dataset = df
 
-    # ==========================================
-    # 1. MÉTRIQUES GLOBALES (KPIs)
-    # ==========================================
     st.subheader("Vue d'ensemble")
     col1, col2, col3 = st.columns(3)
 
@@ -109,56 +96,45 @@ def afficher():
     # ==========================================
     st.subheader("Répartition du corpus")
 
-    # On transforme les données pour Plotly
     repartition = df["Domaine"].value_counts().reset_index()
     repartition.columns = ["Domaine", "Nombre de textes"]
 
-    # Création du graphique en Anneau (Donut)
     fig = px.pie(
         repartition,
         names="Domaine",
         values="Nombre de textes",
-        hole=0.45,  # Taille du trou au centre (effet Donut)
-        color_discrete_sequence=px.colors.qualitative.Pastel  # Couleurs douces et modernes
+        hole=0.45,
+        color_discrete_sequence=px.colors.qualitative.Pastel
     )
 
-    # Personnalisation du design
     fig.update_traces(
         textposition='inside',
-        textinfo='percent+label',  # Affiche le nom du domaine et le pourcentage (20%)
-        hovertemplate="<b>%{label}</b><br>Textes: %{value}<extra></extra>"  # Info au survol
+        textinfo='percent+label',
+        hovertemplate="<b>%{label}</b><br>Textes: %{value}<extra></extra>"
     )
 
-    # On enlève les marges pour que ça s'intègre bien dans la page
     fig.update_layout(
         margin=dict(t=20, b=20, l=0, r=0),
-        showlegend=False,  # On cache la légende sur le côté car les noms sont sur le graphique
+        showlegend=False,
         height=350
     )
 
-    # Affichage sur Streamlit
     col_vide1, col_graph, col_vide2 = st.columns([1, 2, 1])
     with col_graph:
         st.plotly_chart(fig, use_container_width=True)
 
     st.divider()
 
-    # ==========================================
-    # 3. EXPLORATEUR INTERACTIF
-    # ==========================================
     st.subheader("Explorer les textes")
 
-    # Filtre par domaine
     domaines_disponibles = ["Tous les domaines"] + list(df["Domaine"].unique())
     domaine_choisi = st.selectbox("Filtrer par domaine :", domaines_disponibles)
 
-    # Application du filtre
     if domaine_choisi == "Tous les domaines":
         df_filtre = df
     else:
         df_filtre = df[df["Domaine"] == domaine_choisi]
 
-    # Affichage du tableau interactif
     st.write(f"Affichage de **{len(df_filtre)}** publications :")
 
     # st.dataframe permet un affichage interactif (tri, redimensionnement)

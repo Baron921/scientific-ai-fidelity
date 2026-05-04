@@ -1,10 +1,7 @@
 import streamlit as st
 
-import streamlit as st
-
 
 def afficher_footer():
-    # Injection du code CSS pour fixer le footer en bas et ajuster la marge
     st.markdown(
         """
         <style>
@@ -30,7 +27,7 @@ def afficher_footer():
         </style>
 
         <div class="footer">
-            Fait avec ❤️ par <b>Florias Tokotchi</b> et <b>Amos</b> | Copyright © 2026 - Projet TER - Master 1 ATAL - Nantes Université
+            Fait avec ❤️ par <b>Adébiyi TOKOTCHI</b> et <b>Amos GANDONOU</b> | Copyright © 2026 - Projet TER - Master 1 ATAL - Nantes Université
         </div>
         """,
         unsafe_allow_html=True
