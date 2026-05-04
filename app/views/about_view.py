@@ -16,6 +16,11 @@ def afficher_apropos():
 
     st.write("")
 
+    st.link_button("Voir le code source sur GitHub", "https://github.com/Baron921/scientific-ai-fidelity.git",
+                   use_container_width=True)
+
+    st.write("")
+
     st.markdown("### Stack Technique")
 
     col_tech1, col_tech2, col_tech3, col_tech4 = st.columns(4)
