@@ -21,9 +21,9 @@ Les objectifs principaux du projet sont :
 
 ---
 
-## Données
+## Jeu de données
 
-- **100 articles scientifiques open-access**, répartis en **5 domaines (20 articles / domaine)** :
+- **121 articles scientifiques open-access**, répartis en **6 domaines (20 articles / domaine + 1)** :
   - Traitement Automatique des Langues (TALN)
   - Computer science
   - Statistics
