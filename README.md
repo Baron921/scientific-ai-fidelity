@@ -80,6 +80,10 @@ Pour lancer l'application en local, exécutez la commande suivante à la racine 
 ```bash
 streamlit run app/app_streamlit.py
 ```
+
+*![Visualisation des scores déterministes par Prompt (Exemple)](assets/Capture%20d’écran%20du%202026-05-10%2020-49-58.png)*
+Corrélations entre les mesures de cohérence sémantique et textuelle
+
 --- 
 
 ## Résultats et analyses

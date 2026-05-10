@@ -18,7 +18,7 @@ def afficher():
 
     with col_texte:
         st.markdown("""
-        **Bienvenue sur l'interface d'évaluation du projet TER (Master 1 ATAL).**
+        **Bienvenue sur l'interface d'évaluation du projet TER (Master 1 ATAL)**
 
         Cette plateforme a été conçue pour analyser et comparer la fidélité factuelle 
         des textes scientifiques générés par des Modèles de Langage (LLM). 
@@ -32,7 +32,7 @@ def afficher():
 
     with col_info:
         st.info(
-            "💡 **Objectif du Projet**\n\nProuver que l'extraction structurée (NER + Triplets) est plus fiable que la similarité de surface pour la validation scientifique.")
+            "💡 **Objectif du Projet**\n\nMesurer la fréquence des erreurs factuelles dans les réécritures produites par l’IA et tester des méthodes automatisées pour les détecter.")
 
     st.markdown("---")
 

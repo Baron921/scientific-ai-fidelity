@@ -49,9 +49,9 @@ def afficher_apropos():
     st.markdown("##### Sous la supervision de :")
     col_enc1, col_enc2 = st.columns(2)  # Tu peux mettre st.columns(1) si tu n'as qu'un seul encadrant
     with col_enc1:
-        st.info("**Richard DUFOUR**\n\n*richard.dufour@univ-nantes.fr*\n\n*Professeur*")
+        st.info("**Richard DUFOUR**\n\n*richard.dufour@univ-nantes.fr*\n\n*Professeur agrégé au LS2N, Université de Nantes | Chercheur à Inria*")
     with col_enc2:
-        st.info("**Florian BOUDIN**\n\n*florian.boudin@inria.fr*\n\n*Professeur*")
+        st.info("**Florian BOUDIN**\n\n*florian.boudin@inria.fr*\n\n*Professeur des Universités | TALN / NLP @ LS2N | Nantes Université*")
 
     st.write("")
 
