@@ -1,2 +1,12 @@
 .venv/
 .idea/
+env/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.dll
+*.so
+*.egg-info/
+.ipynb_checkpoints/
