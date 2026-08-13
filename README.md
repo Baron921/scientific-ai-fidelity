@@ -66,7 +66,7 @@ git clone https://github.com/Baron921/scientific-ai-fidelity.git
 cd scientific-ai-fidelity
 
 # Installer les librairies Python
-pip install -r requirements.txt
+pip install -r requirements-dev.txt
 ```
 
 ---

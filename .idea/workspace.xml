@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c80d449a-9258-4216-bd08-f44cba4f9fe6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-dev.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="22" />
+    <option name="cachedIndexableFilesCount" value="68" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -29,6 +31,65 @@
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.7034823603693785" />
+      <entry key="MS500" value="3.218166437871902" />
+      <entry key="S2" value="6.434469445146119" />
+      <entry key="S5" value="12.668631078423907" />
+      <entry key="S10" value="19.36941901176082" />
+      <entry key="S30" value="28.491338017007394" />
+      <entry key="S60" value="31.905211780721924" />
+      <entry key="M2" value="33.85780142111869" />
+      <entry key="M5" value="35.118983968013616" />
+      <entry key="M10" value="35.55534734187296" />
+      <entry key="M15" value="35.702634588712975" />
+      <entry key="M30" value="35.850849798561406" />
+      <entry key="H1" value="35.92530758374619" />
+      <entry key="H2" value="35.9626244075891" />
+      <entry key="H4" value="35.9813048507858" />
+      <entry key="D1" value="35.99688311995698" />
+      <entry key="W1" value="35.99955470639007" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.6378791390986267" />
+      <entry key="MS500" value="3.1927026973074" />
+      <entry key="S2" value="6.420614761526189" />
+      <entry key="S5" value="12.654845366665645" />
+      <entry key="S10" value="19.356695948859382" />
+      <entry key="S30" value="28.483911439289873" />
+      <entry key="S60" value="31.900847129383877" />
+      <entry key="M2" value="33.85542761272757" />
+      <entry key="M5" value="35.11798424925499" />
+      <entry key="M10" value="35.554838736307865" />
+      <entry key="M15" value="35.702293545547334" />
+      <entry key="M30" value="35.85067828318472" />
+      <entry key="H1" value="35.92522157621237" />
+      <entry key="H2" value="35.96258134118533" />
+      <entry key="H4" value="35.98128330190272" />
+      <entry key="D1" value="35.996879526296674" />
+      <entry key="W1" value="35.99955419295663" />
+    </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -50,7 +111,9 @@
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/home/florias/IdeaProjects/NU/TER",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -59,7 +122,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-50341a9f1f9c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.26222.68" />
+        <option value="bundled-python-sdk-821f704e66d9-5bd6d13a2a75-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-262.9437.214" />
       </set>
     </attachedChunks>
   </component>
